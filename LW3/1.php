@@ -5,7 +5,7 @@
         $spaceFlag = 'B';
         $resultString = '';
 
-        for ($index = 0; $index < strlen($text); $index++) {
+        for($index = 0; $index < strlen($text); $index++) {
             $value = $text[$index];
             if(($value === ' ') && ($spaceFlag === 'С')){
                 $spaceFlag = 'S';
