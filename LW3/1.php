@@ -11,10 +11,10 @@
                 $spaceFlag = 'S';
             }elseif (!($value === ' ')) {
                 if($spaceFlag === 'S'){
-                    $resultString += ' ';
+                    $resultString = $resultString . ' ';
                 }
                 $spaceFlag = 'N';
-                $resultString += $value;
+                $resultString = $resultString . $value;
             }
         }
         return $resultString;
