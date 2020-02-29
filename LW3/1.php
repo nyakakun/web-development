@@ -1,11 +1,12 @@
 <?php
-    $text = array_key_exists($_GET, "text") ? $_GET["text"] : "";
 
-    function removeExtraBlanks($text) : string{
+    function removeExtraBlanks($text)
+    {
         $spaceFlag = 'B';
         $resultString = '';
 
-        foreach ($text as $value) {
+        for ($index = 0; $index < strlen($text); $index++) {
+            $value = $text[$index];
             if(($value === ' ') && ($spaceFlag === 'N')){
                 $spaceFlag = 'S';
             }elseif (!($value === ' ')) {
@@ -16,7 +17,5 @@
                 $resultString += $value;
             }
         }
-        return = $resultString;
+        return $resultString;
     }
-
-    removeExtraBlanks($text);
