@@ -7,13 +7,13 @@
 
         for ($index = 0; $index < strlen($text); $index++) {
             $value = $text[$index];
-            if(($value === ' ') && ($spaceFlag === 'N')){
+            if(($value === ' ') && ($spaceFlag === 'С')){
                 $spaceFlag = 'S';
             }elseif (!($value === ' ')) {
                 if($spaceFlag === 'S'){
                     $resultString = $resultString . ' ';
                 }
-                $spaceFlag = 'N';
+                $spaceFlag = 'С';
                 $resultString = $resultString . $value;
             }
         }
