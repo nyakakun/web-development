@@ -1,26 +1,21 @@
 <?php
-    function difficultPassword($password)
+    header("Content-Type: text/plain");
+    function difficultPassword(string $password): int
     {
-        $oldChar = "";
-        $difficult = 0;
-        for($index = 0; $index < strlen($password); $index++)
+        $strLen = strlen($password);
+        $difficult = $strLen * 4;
+        $difficult += preg_match_all("/[0-9]/", $password) * 4;
+        $difficult += ($strLen - preg_match_all("/[A-ZА-Я]/", $password)) * 2;
+        $difficult += ($strLen - preg_match_all("/[a-zа-я]/", $password)) * 2;
+        $difficult -= (int)(preg_match_all("/[a-zа-яA-ZА-Я]/", $password) == 0) * $strLen;
+        $difficult -= (int)(preg_match_all("/[0-9]/", $password) == 0) * $strLen;
+        foreach (count_chars($password, 1) as $key => $value)
         {
-            $difficult += 4;
-            $currentChar = $password[$index];
-            if(($currentChar >= '0') && ($currentChar <= '9'))
+            if($value > 1)
             {
-                $difficult += 4;
-            }
-            
-            if((($currentChar >= 'a') && ($currentChar <= 'z'))
-            || (($currentChar >= 'A') && ($currentChar <= 'Z')))
-            {
-                $difficult += 2;
-            }
-            
-            if
-            {
-                $difficult += 2;
+                $difficult -= $value;
             }
         }
+        return $difficult;
     }
+    echo isset($_GET["password"]) ? (string)difficultPassword($_GET["password"]) : "Вы не ввели пароль!!!";

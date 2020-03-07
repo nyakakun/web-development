@@ -1,11 +1,7 @@
 <?php
+    header("Content-Type: text/plain");
     function validateIdentificator(string $identificator): string
     {
-        if(isset($identificator)){
-            return preg_match("/^[A-Za-z][A-Za-z0-9]*$/", $identificator) ? "Yes" : "No";
-        }
-        else{
-            return "Нет идентификатора ☺_☺";
-        }
+        return preg_match("/^[A-Za-z][A-Za-z0-9]*$/", $identificator) ? "Yes" : "No";
     }
-    echo validateIdentificator(isset($_GET["identifier"]) ? $_GET["identifier"] : null);
+    echo isset($_GET["identifier"]) ? validateIdentificator($_GET["identifier"]) : "Нет идентификатора ☺_☺";
