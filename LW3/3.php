@@ -11,7 +11,7 @@
         $difficult -= (int)(preg_match_all("/[0-9]/", $password) == 0) * $strLen;
         foreach (count_chars($password, 1) as $key => $value)
         {
-            if($value > 1)
+            if ($value > 1)
             {
                 $difficult -= $value;
             }
