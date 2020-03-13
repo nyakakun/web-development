@@ -1,34 +1,50 @@
 <?php
 	header("Content-Type: text/plain");
-	if (isset($_GET["email"]))
+	
+	$email = $_GET["email"] ?? null;
+	if (isEmail($email))
 	{
-		$email = isset($_GET["email"]);
-		if (filter_var($email, FILTER_VALIDATE_EMAIL))
+		$user = getUser($email);
+		if (isset($user["ERROR"]))
 		{
-			$user = getUser($email);
-			if (isset($user["ERROR"]))
+			echo $user["ERROR"];
+		}
+		else
+		{
+			echo (
+				"First Name: " . $user["first_name"] .
+				"\nLast Name: " . $user["last_name"] .
+				"\nEmail: " . $user["email"] .
+				"\nAge: " . $user["age"]
+			);
+		}
+	}
+
+	function isEmail(string $email): bool
+	{
+		if (isset($_GET["email"]))
+		{
+			if (filter_var($email, FILTER_VALIDATE_EMAIL))
 			{
-				echo $user["ERROR"];
+				return true;
 			}
 			else
 			{
-				echo "First Name: " . $user["first_name"] . "\nLast Name: " . $user["last_name"] .  "\nEmail: " . $user["email"] .  "\nAge: " . $user["age"];
+				echo "Email инвалид :D";
+				return false;
 			}
 		}
 		else
 		{
-			echo "Email инвалид :D";
+			echo "Нет мыла :<";
+			return false;
 		}
-	}
-	else
-	{
-		echo "Нет мыла :<";
 	}
 
 	function getUser(string $email): array
 	{
-		if (file_exists("../data/$email")){
-			$data = file_get_contents("../data/$email");
+		if (file_exists("../data/$email.txt")){
+			$data = file_get_contents("../data/$email.txt");
 			return unserialize($data);
 		}
 		else
