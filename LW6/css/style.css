@@ -1,0 +1,65 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+main
+{
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 1000px;
+	padding: 100px 20px;
+}
+
+.quote_block
+{
+	order: -1;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 330px auto;
+	grid-template-rows: 205px;
+	gap: 60px;
+}
+
+.quote_block>p
+{
+	align-self: center;
+}
+
+.info_block
+{
+	
+}
+
+.quote_block>img
+{
+	width: 330px;
+}
+
+.anime_block
+{
+	width: 1200px;
+	position: relative;
+	left: -120px;
+}
+
+.anime_block>div
+{
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	gap: 20px;
+}
+
+.anime>img, .anime
+{
+	width: 285px;
+}
+
+.anime>img
+{
+	height: 400px;
+}
