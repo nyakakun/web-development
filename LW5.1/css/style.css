@@ -1,0 +1,29 @@
+body
+{
+	margin: 0;
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column-reverse;
+    Align-items: center;
+}
+
+.info_block, .quote_block
+{
+	display: flex;
+	width: 1000px;
+	box-sizing: border-box;
+	border: none;
+	padding: 20px;
+}
+
+.info_block
+{
+	flex-direction: row-reverse;
+}
+
+.column_1
+{
+	width: 330px;
+	min-width: 330px;
+	margin-right: 60px;
+}

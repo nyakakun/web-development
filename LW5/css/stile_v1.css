@@ -1,0 +1,181 @@
+body
+{
+    margin: 0;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container
+{
+    display: flex;
+    width: 960px;
+    padding: 0 20px;
+}
+
+.avatar
+{
+    margin-bottom: 45px;
+    border-radius: 4px;
+    width: 330px;
+}
+
+ul, ol
+{
+    list-style: none;
+    padding-left: 4px;
+    font: 19px/1 Georgia, Verdana;
+    margin-bottom: 54px;
+}
+
+ol
+{
+    counter-reset: myCounter;
+    margin-top: 23px;
+}
+
+ul
+{
+    margin-top: 26px;
+}
+
+.content_column
+{
+    color: #333;
+}
+
+li
+{
+    margin-bottom: 17px;
+}
+
+ul li::before
+{
+    content: '•';
+    display: inline-block;
+    width: 18px;
+}
+
+ol li::before
+{
+    counter-increment: myCounter;
+    content: counter(myCounter) '.';
+    display: inline-block;
+    width: 18px;
+}
+
+.head_list
+{
+    color: #15a98c;
+    font: 24px/1 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.column_1
+{
+	padding-right: 60px;
+	order: 1;
+}
+
+.column_2
+{
+	order: 2;
+}
+
+q
+{
+    font: 28px/1.5 Georgia, Verdana;
+    font-style: italic;
+    color: #848484;
+}
+
+q::before
+{
+    content: '';
+}
+
+cite
+{
+    font: 16px/46px 'Open Sans', sans-serif;
+    font-weight: 800;
+    padding-left: 3px;
+    color: #333;
+}
+
+.quote_char
+{
+    display: block;
+	padding-top: 32px;
+	position: relative;
+	top: 18px;
+}
+
+.quote
+{
+	margin-top: 0;
+    margin-left: 60px;
+    margin-bottom: 124px;
+}
+
+.my_nickname
+{
+    font: 48px/1 'Open Sans', sans-serif;
+    margin: 0;
+    margin-bottom: 28px;
+    font-weight: 700;
+    padding-left: 5px;
+    color: #333;
+}
+
+.line_name
+{
+    border: 3px solid #45c3aa;
+    border-radius: 3px;
+    width: 55px;
+    margin: 0;
+    margin-bottom: 44px;
+}
+
+.text
+{
+    color: #333;
+    font: 19px/1.7 Georgia, Verdana;
+    margin-bottom: 45px;
+    margin-top: 0;
+}
+
+.header_hobby
+{
+    font: 36px/1 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.hobby
+{
+    margin-bottom: 47px;
+}
+
+.contact_me
+{
+    font: 19px/1 Georgia, Verdana;
+    color: #15a98b;
+    text-decoration: none;
+}
+
+.contact_me:hover
+{
+    color: #098d72;
+}
+
+.text_line
+{
+    border-bottom: 1px solid #15a98b;
+}
+
+.contact_me:hover .text_line
+{
+    border-bottom-color: #15a98b;
+}
