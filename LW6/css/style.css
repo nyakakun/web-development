@@ -215,10 +215,49 @@ footer
 	line-height: 32px;
 	vertical-align: middle;
 }
+
 nav
 {
 	position: fixed;
 	width: 100%;
 	display: grid;
-	grid-template-columns: auto auto auto;
+	background-color: #fff;
+	justify-content: center;
+}
+
+nav>div
+{
+	width: 1000px;
+	display: grid;
+	padding: 0 20px;
+	box-sizing: border-box;
+	grid-auto-flow: column;
+	justify-content: left;
+}
+
+.item_menu>span
+{
+	font-family: Georgia, serif;
+	font-size: 19px;
+}
+
+.item_menu
+{
+	padding: 14.5px;
+	display: block;
+	width: max-content;
+	cursor: pointer;
+	text-decoration: none;
+	color: #333;
+}
+
+.item_menu:hover>img/*, .item_menu:active>img*/
+{
+	filter: brightness(4);
+}
+
+.item_menu:hover/*, .item_menu:active*/
+{
+	background-color: #15a98c;
+	color: #fff;
 }
