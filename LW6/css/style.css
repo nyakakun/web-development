@@ -2,8 +2,8 @@ body
 {
 	margin: 0;
 	padding: 0;
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-rows: 100%;
 }
 
 main
@@ -13,6 +13,7 @@ main
 	box-sizing: border-box;
 	width: 1000px;
 	padding: 100px 20px;
+	justify-self: center; 
 }
 
 .quote_block
@@ -195,9 +196,29 @@ main
 	border: none;
 	grid-column: span 4;
 	justify-self: center;
+	font-size: 19px;
 }
 
 .show_all_anime:hover
 {
 	background-color: #098d71;
+}
+
+footer
+{
+	font-family: Georgia, serif;
+	font-size: 16px;
+	color: #555;
+	width: 100%;
+	text-align: center;
+	background-color: #f5f5f5;
+	line-height: 32px;
+	vertical-align: middle;
+}
+nav
+{
+	position: fixed;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto auto;
 }
