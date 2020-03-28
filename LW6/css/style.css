@@ -101,7 +101,7 @@ main
 	font-family: "Georgia";
 }
 
-.hobby_header
+.header
 {
 	font-size: 36px;
 	line-height: 42px;
@@ -140,4 +140,64 @@ main
 	color: #15a98c;
 	font-family: "Open Sans";
 	font-weight: 600;
+}
+
+.quote_block
+{
+	color: #000;
+}
+
+.quote_text
+{
+	font-size: 28px;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+.quote_text::before
+{
+	content: "";
+}
+
+.quote_author
+{
+	font-size: 16px;
+	font-family: "Open Sans";
+}
+
+.quote_block>p>*
+{
+	display: block;
+}
+
+.anime>h3
+{
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 22px;
+	color: #333;
+}
+
+.anime>p
+{
+	font-family: Georgia, serif;
+	font-size: 16px;
+	color: #555;
+}
+
+.show_all_anime
+{
+	width: 220px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #15a98c;
+	color: #fff;
+	border: none;
+	grid-column: span 4;
+	justify-self: center;
+}
+
+.show_all_anime:hover
+{
+	background-color: #098d71;
 }
