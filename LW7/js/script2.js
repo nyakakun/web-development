@@ -1,3 +1,7 @@
+const operators = ['+', '-', '*', '/'];
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+const spaces = [' ', '(', ')'];
+
 function calcOperation(operation, firstNum, secondNum) {
 	if (operation === '+') return Number(firstNum) + Number(secondNum);
 	if (operation === '*') return Number(firstNum) * Number(secondNum);
@@ -6,9 +10,6 @@ function calcOperation(operation, firstNum, secondNum) {
 }
 
 function findOperator(expression, pos = 0) {
-	const operators = ['+', '-', '*', '/'];
-	const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-	const spaces = [' ', '(', ')'];
 	let result = undefined;
 	let index = pos;
 	for (; index < expression.length; index++) {
